@@ -12,7 +12,7 @@ Provides a lightweight development runserver on Werkzeug with a web-based debugg
 From PyPI with pip
 
 ```
-pip install django_rundbg
+pip install django-rundbg
 ```
 
 In your [development settings](https://code.djangoproject.com/wiki/SplitSettings#Multiplesettingfilesimportingfromeachother) file add the following:

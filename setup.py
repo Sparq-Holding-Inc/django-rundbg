@@ -5,8 +5,8 @@ from setuptools import setup
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django_rundbg',
-    version='0.1',
+    name='django-rundbg',
+    version='0.1.0',
     packages=['django_rundbg'],
     include_package_data=True,
     license='Apache License',
