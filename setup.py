@@ -15,7 +15,7 @@ setup(
     long_description=convert('README.md', 'rst'),
     keywords=['django', 'debug', 'django-rest-framework', 'api'],
     url='https://github.com/octobot-dev/django-rundbg',
-    download_url='https://github.com/octobot-dev/django-rundbg/archive/0.1.tar.gz',
+    download_url='https://github.com/octobot-dev/django-rundbg/archive/0.1.2.tar.gz',
     author='Juan Saavedra',
     author_email='jsaavedra@octobot.io',
     zip_safe=True,
