@@ -1,16 +1,18 @@
 import os
 from setuptools import setup
+from pypandoc import convert
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-rundbg',
-    version='0.1.0',
+    version='0.1.2',
     packages=['django_rundbg'],
     include_package_data=True,
     license='Apache License',
     description='Provides a lightweight development runserver on Werkzeug with debugging',
+    long_description=convert('README.md', 'rst'),
     keywords=['django', 'debug', 'django-rest-framework', 'api'],
     url='https://github.com/octobot-dev/django-rundbg',
     download_url='https://github.com/octobot-dev/django-rundbg/archive/0.1.tar.gz',
