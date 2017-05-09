@@ -173,14 +173,14 @@ class RunDbgDebuggedApplication(DebuggedApplication):
 
         # We will intercept the call only if we need to. If not, pass it along.
         request = Request(environ)
-        if not request.args.get('__debugger__') == 'yes' and self.debugger_path is not None and \
-                request.path == self.debugger_path and self.use_link:
+        if not request.args.get('__debugger__') == 'yes' and \
+                self.debugger_path is not None and \
+                request.path == self.debugger_path and \
+                self.use_link:
 
             secret = request.args.get('s')
             traceback = self.tracebacks.get(request.args.get('tb', type=int))
-            if secret == self.secret and traceback:
+            if secret == self.secret and traceback is not None:
                 return self.debugger_console(environ, start_response, traceback)
-
-        logger.debug(super(RunDbgDebuggedApplication, self))
 
         return super(RunDbgDebuggedApplication, self).__call__(environ, start_response)

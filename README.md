@@ -1,9 +1,10 @@
 # django-rundbg
 
-Provides a lightweight development runserver on Werkzeug with a web-based debugger.
+Provides a lightweight development runserver on Werkzeug with a web-based debugger
+with support for REST APIs.
 
 ## Features
-- Friendly for API debugging, like Django Rest Framework.
+- Friendly for API debugging, like Django Rest Framework. 
 - Werkzeug [web-based debugger](http://werkzeug.pocoo.org/docs/0.11/debug/#using-the-debugger)
 
 ### :warning: Be very careful to keep this away from any production environment
@@ -52,14 +53,15 @@ Additionally, it supports one additional parameter useful for debugging XHR requ
 python manage.py rundbg --use-link
 ```
 
-This will show an very simple error 500 page, with a _link_ to the Werkzeug Traceback and web-based interactive debugger that you can open anywhere.
+This will show an very simple error 500 page, with a _link_ to the Werkzeug Traceback and web-based interactive debugger that you can open in any browser window. The default behaviour for the 
+Werkzeug debugger is to serve the debugging page to the request that created the exception.
 
 Additionally, it supports the following parameters from `runserver_plus`:
 - `--reloader-interval 2` After how many seconds auto-reload should scan for updates in poller-mode.
 - `--keep-meta-shutdown` Keep `request.META['werkzeug.server.shutdown']` function which is automatically removed because Django 
 debug pages tries to call the function and unintentionally shuts down the Werkzeug server.
 
-Werkzeug security PIN is disabled.
+*Werkzeug security PIN is disabled*.
 
 ## Credits
 
@@ -72,4 +74,4 @@ more comprehensive command than this one.
 ## Authors
 - Juan Saavedra
 
-With :heart: from Octobot
+With :heart: from [Octobot](https://www.octobot.io)

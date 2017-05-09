@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-rundbg',
-    version='0.1.2',
+    version='0.1.3',
     packages=['django_rundbg'],
     include_package_data=True,
     license='Apache License',
@@ -15,7 +15,7 @@ setup(
     long_description=convert('README.md', 'rst'),
     keywords=['django', 'debug', 'django-rest-framework', 'api'],
     url='https://github.com/octobot-dev/django-rundbg',
-    download_url='https://github.com/octobot-dev/django-rundbg/archive/0.1.2.tar.gz',
+    download_url='https://github.com/octobot-dev/django-rundbg/archive/0.1.3.tar.gz',
     author='Juan Saavedra',
     author_email='jsaavedra@octobot.io',
     zip_safe=True,
@@ -28,7 +28,9 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Framework :: Django',
+        'Framework :: Django :: 1.11',
         'Framework :: Django :: 1.10',
         'Framework :: Django :: 1.9',
         'Framework :: Django :: 1.8',
