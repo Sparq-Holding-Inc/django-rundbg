@@ -93,10 +93,9 @@ class Command(OriginalCommand):
         quit_command = (sys.platform == 'win32') and 'CTRL-BREAK' or 'CONTROL-C'
         reloader_interval = options.get('reloader_interval', 2)
 
-        handler = RunDbgDebuggedApplication(
-            self.get_handler(None, **options), use_link=True, evalex=True)
+        handler = StaticFilesHandler(self.get_handler(None, **options))
+        handler = RunDbgDebuggedApplication(handler, use_link=True, evalex=True)
 
-        handler = StaticFilesHandler(handler)
 
         # Werkzeug needs to be clued in its the main instance if running
         # without reloader or else it won't show key.
