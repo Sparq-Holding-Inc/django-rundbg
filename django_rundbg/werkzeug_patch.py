@@ -74,6 +74,7 @@ class RunDbgDebuggedApplication(DebuggedApplication):
     def __init__(self, *args, **kwargs):
         self.debugger_path = kwargs.pop('debugger_path', '/dbg-console')
         self.use_link = kwargs.pop('use_link', False)
+
         super(RunDbgDebuggedApplication, self).__init__(*args, **kwargs)
 
     def get_debugger_path(self, environ):

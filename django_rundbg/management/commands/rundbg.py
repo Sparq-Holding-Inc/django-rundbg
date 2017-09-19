@@ -9,6 +9,7 @@ from datetime import datetime
 from django.conf import settings
 from django.core.management.base import CommandError
 from django.core.management.commands.runserver import Command as OriginalCommand
+from django.contrib.staticfiles.handlers import StaticFilesHandler
 from django_rundbg.werkzeug_patch import RunDbgDebuggedApplication
 
 logger = logging.getLogger("rundbg")
@@ -92,8 +93,9 @@ class Command(OriginalCommand):
         quit_command = (sys.platform == 'win32') and 'CTRL-BREAK' or 'CONTROL-C'
         reloader_interval = options.get('reloader_interval', 2)
 
-        handler = RunDbgDebuggedApplication(
-            self.get_handler(None, **options), use_link=True, evalex=True)
+        handler = StaticFilesHandler(self.get_handler(None, **options))
+        handler = RunDbgDebuggedApplication(handler, use_link=True, evalex=True)
+
 
         # Werkzeug needs to be clued in its the main instance if running
         # without reloader or else it won't show key.
