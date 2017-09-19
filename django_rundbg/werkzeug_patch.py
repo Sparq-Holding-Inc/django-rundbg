@@ -79,8 +79,8 @@ class RunDbgDebuggedApplication(DebuggedApplication):
     def get_debugger_path(self, environ):
         '''Return the path to the debugger. Include the host if present'''
         request = Request(environ)
-        if request.headers.get('host'):
-            return request.headers.get('host') + self.debugger_path
+        if request.host_url:
+            return request.host_url + self.debugger_path.replace('/', '')
         else:
             return self.debugger_path
 
